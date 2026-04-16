@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Tela de cadastro -->
+  <div id="tela-cadastro" class="tela">
+    <h1>Jogo da Velha</h1>
+    <div class="card">
+      <div class="campo">
+        <label><span class="bolinha bolinha-x"></span> Jogador X</label>
+        <input type="text" id="nome-x" placeholder="Nome do jogador X" maxlength="20" />
+      </div>
+      <div class="campo">
+        <label><span class="bolinha bolinha-o"></span> Jogador O</label>
+        <input type="text" id="nome-o" placeholder="Nome do jogador O" maxlength="20" />
+      </div>
+      <button id="btn-comecar">Começar</button>
+    </div>
+  </div>
+
+  <!-- Tela do jogo -->
+  <div id="tela-jogo" class="tela escondido">
+    <h1>Jogo da Velha</h1>
+
+    <div class="jogadores-row">
+      <div class="jogador-tag" id="tag-x">
+        <span class="bolinha bolinha-x"></span>
+        <span id="label-x">Jogador X</span>
+      </div>
+      <div class="jogador-tag" id="tag-o">
+        <span class="bolinha bolinha-o"></span>
+        <span id="label-o">Jogador O</span>
+      </div>
+    </div>
+
+    <p class="status" id="status">Vez de <strong id="status-nome"></strong></p>
+
+    <div class="tabuleiro" id="tabuleiro">
+      <div class="espaco" data-index="0"></div>
+      <div class="espaco" data-index="1"></div>
+      <div class="espaco" data-index="2"></div>
+      <div class="espaco" data-index="3"></div>
+      <div class="espaco" data-index="4"></div>
+      <div class="espaco" data-index="5"></div>
+      <div class="espaco" data-index="6"></div>
+      <div class="espaco" data-index="7"></div>
+      <div class="espaco" data-index="8"></div>
+    </div>
+
+    <div class="botoes-row">
+      <button id="btn-reiniciar">Nova partida</button>
+      <button id="btn-trocar">Trocar jogadores</button>
+    </div>
+  </div>
+
+  <!-- Tela do placar -->
+  <div id="tela-placar" class="tela escondido">
+    <h1>Placar</h1>
+
+    <div class="placar-grid">
+      <div class="placar-card">
+        <div class="placar-nome" id="placar-nome-x"></div>
+        <div class="placar-numero" id="placar-vitorias-x">0</div>
+        <div class="placar-label">vitórias</div>
+      </div>
+      <div class="placar-card placar-empates">
+        <div class="placar-numero" id="placar-empates">0</div>
+        <div class="placar-label">empates</div>
+      </div>
+      <div class="placar-card">
+        <div class="placar-nome" id="placar-nome-o"></div>
+        <div class="placar-numero" id="placar-vitorias-o">0</div>
+        <div class="placar-label">vitórias</div>
+      </div>
+    </div>
+
+    <div class="historico-titulo">Histórico de partidas</div>
+    <ul class="historico" id="historico"></ul>
+
+    <div class="botoes-row">
+      <button id="btn-jogar-de-novo">Jogar de novo</button>
+      <button id="btn-reiniciar-placar">Zerar placar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
